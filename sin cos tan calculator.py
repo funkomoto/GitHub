@@ -6,6 +6,16 @@ def fac(n):
     n -= 1
   return(a)
 
+##Pi calculator
+def pi():
+  n = s = 0## n is the polynomial degree
+  check = 1
+  while check != s:
+    check = s
+    s += ((-1)**n)(4/(2*n+1))  ##((((-1)**n) * (x**((2*n)+r)))/((fac((2*n)+r))))
+    n += 1
+    print(s)
+      
 ## Sin and cos calculator
 def calc(x,r):
   n = s = 0## n is the polynomial degree
@@ -38,7 +48,7 @@ def tan(x):
      return 0
     check = s/ts
 
-## Handles user input
+## Checks if its a number and handles other cases
 def isnumber(s):
   try:
     float(s)
@@ -73,7 +83,10 @@ def f(mod):
     tfun = "cos(x)"
   x = input(tfun + "|   x =  ")
 ## Trig terminology dictionary
-  if x in ["pi", "Pi"]:
+  if x in ["calc pi", "calculate pi"]:
+    pi()
+    return 0
+  elif x in ["pi", "Pi"]:
     x=3.14159265358979323846264338327
   elif x in ["pi/2", "Pi/2", "pi / 2", "Pi / 2"]:
     x=1.57079632679489661923132169163
